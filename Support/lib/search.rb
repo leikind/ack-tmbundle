@@ -81,6 +81,8 @@ class AckInProject::Search
     result = plist['result']
     
     options = %w(--group --color --flush)
+    options <<  '--type-add RAKE=.rake '
+    options <<  '--type-add HAML=.haml '
     options << '-w' if result['matchWholeWords'] == 1
     options << '-i' if result['ignoreCase'] == 1
     options << '-Q' if result['literalMatch'] == 1
